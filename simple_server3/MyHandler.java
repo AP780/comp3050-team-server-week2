@@ -18,11 +18,11 @@ public class MyHandler implements HttpHandler {
 
         // Set response headers.
         Headers headers = he.getResponseHeaders();
-        headers.set("Content-Type", "text/plain");
+        headers.set("Content-Type", "application/JSON");
         headers.set("Connection", "close");
 
         // Send response body.
-        String response = "Name: Australia; Gold: 2; Silver: 4; Bronze: 18";
+        String response = "{\"name\":\"John\", \"medals\" :  {\"gold\" : 18, \"silver\" : 12, \"bronze\" : 11}}";
         System.out.println(response);
         he.sendResponseHeaders(200, response.length());
         OutputStream os = he.getResponseBody();

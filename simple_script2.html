@@ -21,7 +21,10 @@ function fillName() {
   fetch("http://localhost:8000/test")
     .then(response => response.json())
     .then(data => {
-      document.getElementById("name").value = data;
+      document.getElementById("name").value = data.name;
+      document.getElementById("gold").value = data.gold;
+      document.getElementById("silver").value = data.silver;
+      document.getElementById("bronze").value = data.bronze;
     })
     .catch(error => console.error("Error:", error));
 }
