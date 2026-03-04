@@ -1,9 +1,8 @@
-import java.io.IOException;
-import java.io.OutputStream;
-
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import java.io.IOException;
+import java.io.OutputStream;
 
 public class MyHandler implements HttpHandler {
 
@@ -22,7 +21,7 @@ public class MyHandler implements HttpHandler {
         headers.set("Connection", "close");
 
         // Send response body.
-        String response = "{\"name\":\"John\", \"medals\" :  {\"gold\" : 18, \"silver\" : 12, \"bronze\" : 11}}";
+        String response = "{\"name\":\"Japan\",\"gold\":27,\"silver\":14,\"bronze\":17,\" total\":58}";
         System.out.println(response);
         he.sendResponseHeaders(200, response.length());
         OutputStream os = he.getResponseBody();
